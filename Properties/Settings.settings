@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BWM.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BWM_com_bkav_bni_AgentWS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://bni.bkav.com/Service/AgentWS.asmx</Value>
+    </Setting>
+    <Setting Name="BWM_com_bkav_bwss_WebserviceBWSS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://bwss.bkav.com/Service/BWEC/WebserviceBWSS.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

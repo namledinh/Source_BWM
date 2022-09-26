@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ReportTick">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReportTickResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReportTickResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertWarningByIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contentViolate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastTimeExplanation" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertWarningByIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertWarningByIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertWarningByAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contentViolate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lastTimeExplanation" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertWarningByAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertWarningByAccountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllEmployeeUseComputer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lastupdate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllEmployeeUseComputerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllEmployeeUseComputerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoAccountByIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoAccountByIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfoAccountByIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSensorOfEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSensorOfEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSensorOfEmployeeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckEmployeeUseComputer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckEmployeeUseComputerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckEmployeeUseComputerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateKQKLMR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="system" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="manager" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keywordFinish" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="result" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tester" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="start" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deadline" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoryReport" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateKQKLMRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateKQKLMRResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateKQKLMRByAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sytemKQKLMR" type="tns:KQKLMR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="KQKLMR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="System" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manager" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="KeywordFinish" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tester" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Deadline" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenSystem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateKQKLMRByAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateKQKLMRByAccountResult" type="tns:ObjectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ObjectResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="InfoMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Result" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateBECByAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="systemBwec" type="tns:BEC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BEC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContentViolate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContentViolateDetail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="System" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenSystem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InfoDeadline" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InfoOverdue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SystemSource" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateBECByAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateBECByAccountResult" type="tns:ObjectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateTickAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="systemTick" type="tns:Ticks" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Ticks">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RegulationName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ViolateContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeTick" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TickQuantity" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Money" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="System" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenSystem" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateTickAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateTickAccountResult" type="tns:ObjectResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadObjectResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="starDateTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="enDateTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadObjectResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadObjectResultResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAccountPublishKQKL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="account" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="archiveId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckAccountPublishKQKLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckAccountPublishKQKLResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReportTickSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportTick" />
+  </wsdl:message>
+  <wsdl:message name="ReportTickSoapOut">
+    <wsdl:part name="parameters" element="tns:ReportTickResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertWarningByIPSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertWarningByIP" />
+  </wsdl:message>
+  <wsdl:message name="InsertWarningByIPSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertWarningByIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertWarningByAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertWarningByAccount" />
+  </wsdl:message>
+  <wsdl:message name="InsertWarningByAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertWarningByAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllEmployeeUseComputerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllEmployeeUseComputer" />
+  </wsdl:message>
+  <wsdl:message name="GetAllEmployeeUseComputerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllEmployeeUseComputerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoAccountByIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfoAccountByIP" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoAccountByIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoAccountByIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSensorOfEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSensorOfEmployee" />
+  </wsdl:message>
+  <wsdl:message name="GetSensorOfEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSensorOfEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckEmployeeUseComputerSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckEmployeeUseComputer" />
+  </wsdl:message>
+  <wsdl:message name="CheckEmployeeUseComputerSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckEmployeeUseComputerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateKQKLMRSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateKQKLMR" />
+  </wsdl:message>
+  <wsdl:message name="CreateKQKLMRSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateKQKLMRResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateKQKLMRByAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateKQKLMRByAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateKQKLMRByAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateKQKLMRByAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateBECByAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateBECByAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateBECByAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateBECByAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateTickAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateTickAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateTickAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateTickAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadObjectResultSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadObjectResult" />
+  </wsdl:message>
+  <wsdl:message name="LoadObjectResultSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadObjectResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckAccountPublishKQKLSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckAccountPublishKQKL" />
+  </wsdl:message>
+  <wsdl:message name="CheckAccountPublishKQKLSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckAccountPublishKQKLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebserviceBWSSSoap">
+    <wsdl:operation name="ReportTick">
+      <wsdl:input message="tns:ReportTickSoapIn" />
+      <wsdl:output message="tns:ReportTickSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertWarningByIP">
+      <wsdl:input message="tns:InsertWarningByIPSoapIn" />
+      <wsdl:output message="tns:InsertWarningByIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertWarningByAccount">
+      <wsdl:input message="tns:InsertWarningByAccountSoapIn" />
+      <wsdl:output message="tns:InsertWarningByAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployeeUseComputer">
+      <wsdl:input message="tns:GetAllEmployeeUseComputerSoapIn" />
+      <wsdl:output message="tns:GetAllEmployeeUseComputerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoAccountByIP">
+      <wsdl:input message="tns:GetInfoAccountByIPSoapIn" />
+      <wsdl:output message="tns:GetInfoAccountByIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorOfEmployee">
+      <wsdl:input message="tns:GetSensorOfEmployeeSoapIn" />
+      <wsdl:output message="tns:GetSensorOfEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmployeeUseComputer">
+      <wsdl:input message="tns:CheckEmployeeUseComputerSoapIn" />
+      <wsdl:output message="tns:CheckEmployeeUseComputerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateKQKLMR">
+      <wsdl:input message="tns:CreateKQKLMRSoapIn" />
+      <wsdl:output message="tns:CreateKQKLMRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateKQKLMRByAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Thêm mới KQKL MR cho account, người duyệt</wsdl:documentation>
+      <wsdl:input message="tns:CreateKQKLMRByAccountSoapIn" />
+      <wsdl:output message="tns:CreateKQKLMRByAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBECByAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Tạo BEC cho một account.</wsdl:documentation>
+      <wsdl:input message="tns:CreateBECByAccountSoapIn" />
+      <wsdl:output message="tns:CreateBECByAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTickAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Thêm mới tick cho account</wsdl:documentation>
+      <wsdl:input message="tns:CreateTickAccountSoapIn" />
+      <wsdl:output message="tns:CreateTickAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadObjectResult">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lấy danh sách ngày nghỉ từ ngày đến ngày</wsdl:documentation>
+      <wsdl:input message="tns:LoadObjectResultSoapIn" />
+      <wsdl:output message="tns:LoadObjectResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAccountPublishKQKL">
+      <wsdl:input message="tns:CheckAccountPublishKQKLSoapIn" />
+      <wsdl:output message="tns:CheckAccountPublishKQKLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebserviceBWSSSoap" type="tns:WebserviceBWSSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReportTick">
+      <soap:operation soapAction="http://tempuri.org/ReportTick" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertWarningByIP">
+      <soap:operation soapAction="http://tempuri.org/InsertWarningByIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertWarningByAccount">
+      <soap:operation soapAction="http://tempuri.org/InsertWarningByAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployeeUseComputer">
+      <soap:operation soapAction="http://tempuri.org/GetAllEmployeeUseComputer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoAccountByIP">
+      <soap:operation soapAction="http://tempuri.org/GetInfoAccountByIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorOfEmployee">
+      <soap:operation soapAction="http://tempuri.org/GetSensorOfEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmployeeUseComputer">
+      <soap:operation soapAction="http://tempuri.org/CheckEmployeeUseComputer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateKQKLMR">
+      <soap:operation soapAction="http://tempuri.org/CreateKQKLMR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateKQKLMRByAccount">
+      <soap:operation soapAction="http://tempuri.org/CreateKQKLMRByAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBECByAccount">
+      <soap:operation soapAction="http://tempuri.org/CreateBECByAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTickAccount">
+      <soap:operation soapAction="http://tempuri.org/CreateTickAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadObjectResult">
+      <soap:operation soapAction="http://tempuri.org/LoadObjectResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAccountPublishKQKL">
+      <soap:operation soapAction="http://tempuri.org/CheckAccountPublishKQKL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebserviceBWSSSoap12" type="tns:WebserviceBWSSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReportTick">
+      <soap12:operation soapAction="http://tempuri.org/ReportTick" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertWarningByIP">
+      <soap12:operation soapAction="http://tempuri.org/InsertWarningByIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertWarningByAccount">
+      <soap12:operation soapAction="http://tempuri.org/InsertWarningByAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployeeUseComputer">
+      <soap12:operation soapAction="http://tempuri.org/GetAllEmployeeUseComputer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoAccountByIP">
+      <soap12:operation soapAction="http://tempuri.org/GetInfoAccountByIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSensorOfEmployee">
+      <soap12:operation soapAction="http://tempuri.org/GetSensorOfEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmployeeUseComputer">
+      <soap12:operation soapAction="http://tempuri.org/CheckEmployeeUseComputer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateKQKLMR">
+      <soap12:operation soapAction="http://tempuri.org/CreateKQKLMR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateKQKLMRByAccount">
+      <soap12:operation soapAction="http://tempuri.org/CreateKQKLMRByAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBECByAccount">
+      <soap12:operation soapAction="http://tempuri.org/CreateBECByAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTickAccount">
+      <soap12:operation soapAction="http://tempuri.org/CreateTickAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadObjectResult">
+      <soap12:operation soapAction="http://tempuri.org/LoadObjectResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAccountPublishKQKL">
+      <soap12:operation soapAction="http://tempuri.org/CheckAccountPublishKQKL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebserviceBWSS">
+    <wsdl:port name="WebserviceBWSSSoap" binding="tns:WebserviceBWSSSoap">
+      <soap:address location="https://bwss.bkav.com/Service/BWEC/WebserviceBWSS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebserviceBWSSSoap12" binding="tns:WebserviceBWSSSoap12">
+      <soap12:address location="https://bwss.bkav.com/Service/BWEC/WebserviceBWSS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
